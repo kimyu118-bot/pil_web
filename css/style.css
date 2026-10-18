@@ -1,0 +1,37 @@
+body {
+    background-color: #FDFBF7;
+    color: #242424;
+    overflow-x: hidden;
+    font-family: "Plus Jakarta Sans", "Noto Sans KR", sans-serif;
+}
+
+.glass-panel {
+    background: rgba(253, 251, 247, 0.72);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #FDFBF7;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #D1C7BD;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #8A9A86;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .animate-bounce,
+    .animate-pulse {
+        animation: none !important;
+    }
+}

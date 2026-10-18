@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="ko" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AURA PILATES | 프리미엄 스튜디오</title>
+    <meta name="description" content="아우라 필라테스는 체형 정렬과 호흡, 코어 균형을 중심으로 한 1:1 맞춤 필라테스 스튜디오입니다.">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%23FDFBF7' stroke='%23242424' stroke-width='2'/%3E%3Ctext x='32' y='42' text-anchor='middle' font-family='Georgia' font-size='32' font-style='italic' fill='%23242424'%3EA%3C/text%3E%3C/svg%3E">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Noto+Sans+KR:wght@200;300;400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="js/tailwind-config.js"></script>
+    <script src="https://unpkg.com/lucide@0.469.0/dist/umd/lucide.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+</head>
+<body class="selection:bg-brand-sage selection:text-white">
+
+    <header id="main-header" class="fixed top-0 left-0 z-50 w-full border-b border-stone-200/50 glass-panel transition-all duration-300">
+        <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+            <a href="#home" class="group flex items-center gap-3">
+                <div class="flex h-10 w-10 items-center justify-center rounded-full border border-brand-charcoal/20 transition-colors duration-300 group-hover:border-brand-sage">
+                    <span class="font-serif text-xl font-bold italic text-brand-charcoal transition-colors group-hover:text-brand-sage">A</span>
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-serif text-xl font-semibold leading-none tracking-widest text-brand-charcoal">AURA</span>
+                    <span class="mt-1 text-[9px] font-light uppercase tracking-[0.25em] text-stone-500">Pilates &amp; Posture</span>
+                </div>
+            </a>
+
+            <nav class="hidden items-center gap-8 text-sm font-medium tracking-wide text-stone-700 md:flex" aria-label="주요 메뉴">
+                <a href="#about" class="transition-colors hover:text-brand-sage">Philosophy</a>
+                <a href="#programs" class="transition-colors hover:text-brand-sage">Programs</a>
+                <a href="#instructors" class="transition-colors hover:text-brand-sage">Instructors</a>
+                <a href="#schedule" class="transition-colors hover:text-brand-sage">Schedule</a>
+            </nav>
+
+            <div class="flex items-center gap-4">
+                <button type="button" data-open-booking class="flex shrink-0 items-center gap-2 whitespace-nowrap rounded-full bg-brand-charcoal px-5 py-2.5 text-xs font-medium uppercase tracking-wider text-white shadow-sm transition-all duration-300 hover:bg-brand-sage hover:shadow-md">
+                    <span class="hidden sm:inline">체험 클래스 예약</span>
+                    <span class="sm:hidden">예약</span>
+                    <i data-lucide="arrow-up-right" class="h-3.5 w-3.5"></i>
+                </button>
+                <button type="button" id="mobile-menu-btn" class="p-2 text-brand-charcoal focus:outline-none md:hidden" aria-expanded="false" aria-controls="mobile-menu">
+                    <i data-lucide="menu" class="h-6 w-6"></i>
+                    <span class="sr-only">메뉴 열기</span>
+                </button>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden border-t border-stone-200/70 px-6 py-4 md:hidden">
+            <nav class="flex flex-col gap-3 text-sm font-medium text-stone-700" aria-label="모바일 메뉴">
+                <a href="#about" class="mobile-link">Philosophy</a>
+                <a href="#programs" class="mobile-link">Programs</a>
+                <a href="#instructors" class="mobile-link">Instructors</a>
+                <a href="#schedule" class="mobile-link">Schedule</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="relative flex min-h-screen w-full items-center pt-24">
+            <div class="relative z-20 mx-auto grid w-full max-w-7xl grid-cols-1 items-center px-6 py-10 lg:grid-cols-12 lg:py-16">
+                <div class="hero-copy pointer-events-auto min-w-0 space-y-6 lg:col-span-8">
+                    <div class="flex w-fit max-w-full items-center gap-2 rounded-full border border-brand-sage/30 px-3.5 py-1.5 text-xs font-medium uppercase tracking-wide text-stone-700 glass-panel sm:tracking-widest">
+                        <span class="h-2 w-2 shrink-0 animate-pulse rounded-full bg-brand-sage"></span>
+                        <span class="min-w-0 whitespace-normal leading-relaxed">1:1 Posture Alignment</span>
+                    </div>
+                    <h1 class="font-serif text-4xl font-normal leading-[1.15] text-brand-charcoal md:text-6xl lg:text-7xl">
+                        유연한 움직임의 흐름,<br>
+                        <span class="hero-sub font-light italic text-brand-sageDark">깊은 호흡과 코어 밸런스</span>
+                    </h1>
+
+                    <p class="hero-desc max-w-xl text-sm font-light leading-relaxed text-stone-600 md:text-base">
+                        아우라 필라테스는 신체의 균형과 우아한 움직임을 함께 다루는 1:1 맞춤 스튜디오입니다.
+                        깊은 호흡으로 중심을 잡고, 자세의 흐름을 함께 맞춰 갑니다.
+                    </p>
+
+                    <div class="flex flex-col items-stretch gap-3 pt-2 sm:flex-row sm:flex-wrap sm:items-center">
+                        <button type="button" data-open-booking class="flex items-center justify-center gap-3 rounded-full bg-brand-charcoal px-7 py-3.5 text-sm font-medium text-white shadow-lg transition-all duration-300 hover:bg-brand-sage hover:shadow-brand-sage/20">
+                            <span>무료 1:1 체형 분석 &amp; 체험</span>
+                            <i data-lucide="arrow-right" class="h-4 w-4"></i>
+                        </button>
+                    </div>
+
+                    <div class="grid max-w-md grid-cols-3 gap-6 border-t border-stone-300/40 pt-8">
+                        <div>
+                            <div class="hero-stat font-serif text-2xl font-semibold text-brand-charcoal md:text-3xl">1:1</div>
+                            <div class="hero-stat-label mt-0.5 text-[11px] uppercase tracking-wider text-stone-500">맞춤 기구 레슨</div>
+                        </div>
+                        <div>
+                            <div class="hero-stat font-serif text-2xl font-semibold text-brand-charcoal md:text-3xl">50분</div>
+                            <div class="hero-stat-label mt-0.5 text-[11px] uppercase tracking-wider text-stone-500">세션 기본 시간</div>
+                        </div>
+                        <div>
+                            <div class="hero-stat font-serif text-2xl font-semibold text-brand-charcoal md:text-3xl">2:1</div>
+                            <div class="hero-stat-label mt-0.5 text-[11px] uppercase tracking-wider text-stone-500">듀엣 클래스</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <a href="#about" class="absolute bottom-6 left-1/2 z-20 hidden -translate-x-1/2 flex-col items-center gap-2 text-stone-400 transition-colors hover:text-brand-sage lg:flex">
+                <span class="text-[10px] uppercase tracking-widest">Scroll To Explore</span>
+                <div class="flex h-9 w-5 justify-center rounded-full border border-stone-300 p-1">
+                    <div class="h-2 w-1 animate-bounce rounded-full bg-brand-sage"></div>
+                </div>
+            </a>
+        </section>
+
+        <section id="about" class="relative z-10 border-t border-stone-200/60 bg-brand-bg py-24">
+            <div class="mx-auto max-w-7xl px-6">
+                <div class="mx-auto mb-16 max-w-2xl text-center">
+                    <span class="text-xs font-semibold uppercase tracking-widest text-brand-sage">Core Philosophy</span>
+                    <h2 class="mt-2 font-serif text-3xl font-normal text-brand-charcoal md:text-5xl">
+                        단순한 운동을 넘어선<br>
+                        <span class="font-light italic text-brand-sageDark">신체와 호흡의 우아한 정렬</span>
+                    </h2>
+                    <p class="mt-4 text-sm leading-relaxed text-stone-600 md:text-base">
+                        아우라 필라테스는 몸의 축을 다시 세우고, 깊은 호흡으로 겉근육이 아닌 중심의 힘을 깨웁니다.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 gap-8 md:grid-cols-3">
+                    <article class="reveal rounded-3xl border border-stone-200/80 bg-brand-card/50 p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                        <div class="mb-6 flex h-12 w-12 items-center justify-center rounded-2xl bg-white text-brand-sage shadow-sm">
+                            <i data-lucide="compass" class="h-6 w-6"></i>
+                        </div>
+                        <span class="font-mono text-xs uppercase tracking-wider text-stone-400">Pillar 01</span>
+                        <h3 class="mb-3 mt-1 font-serif text-2xl font-medium text-brand-charcoal">Precision Alignment</h3>
+                        <p class="text-sm leading-relaxed text-stone-600">거북목, 골반 기울기, 일상 자세의 편차를 살피고 몸이 편한 균형점으로 정렬합니다.</p>
+                    </article>
+                    <article class="reveal rounded-3xl border border-stone-200/80 bg-brand-card/50 p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                        <div class="mb-6 flex h-12 w-12 items-center justify-center rounded-2xl bg-white text-brand-sage shadow-sm">
+                            <i data-lucide="activity" class="h-6 w-6"></i>
+                        </div>
+                        <span class="font-mono text-xs uppercase tracking-wider text-stone-400">Pillar 02</span>
+                        <h3 class="mb-3 mt-1 font-serif text-2xl font-medium text-brand-charcoal">Core Stability</h3>
+                        <p class="text-sm leading-relaxed text-stone-600">복부와 골반 바닥을 깨우는 호흡으로, 흔들리지 않는 중심을 만듭니다.</p>
+                    </article>
+                    <article class="reveal rounded-3xl border border-stone-200/80 bg-brand-card/50 p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                        <div class="mb-6 flex h-12 w-12 items-center justify-center rounded-2xl bg-white text-brand-sage shadow-sm">
+                            <i data-lucide="wind" class="h-6 w-6"></i>
+                        </div>
+                        <span class="font-mono text-xs uppercase tracking-wider text-stone-400">Pillar 03</span>
+                        <h3 class="mb-3 mt-1 font-serif text-2xl font-medium text-brand-charcoal">Mindful Flow</h3>
+                        <p class="text-sm leading-relaxed text-stone-600">동작과 동작 사이를 끊지 않고 이어 가며, 움직임 자체에 집중하는 시간을 만듭니다.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="programs" class="relative bg-stone-100/60 py-24">
+            <div class="mx-auto max-w-7xl px-6">
+                <div class="mb-16 flex flex-col justify-between gap-6 md:flex-row md:items-end">
+                    <div>
+                        <span class="text-xs font-semibold uppercase tracking-widest text-brand-sage">Exclusive Classes</span>
+                        <h2 class="mt-2 font-serif text-3xl font-normal text-brand-charcoal md:text-5xl">맞춤형 클래스 프로그램</h2>
+                    </div>
+                    <p class="max-w-md text-sm leading-relaxed text-stone-600">통증 완화, 라인, 산전산후, 컨디셔닝처럼 목적에 맞춰 세션을 구성합니다.</p>
+                </div>
+
+                <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
+                    <article class="reveal group overflow-hidden rounded-3xl border border-stone-200 bg-white shadow-sm transition-all duration-500 hover:shadow-2xl">
+                        <div class="relative h-64 overflow-hidden bg-stone-200">
+                            <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&amp;fit=crop&amp;q=80&amp;w=800" alt="리포머 위에서 운동하는 사람" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                            <span class="absolute left-4 top-4 rounded-full bg-white/90 px-3 py-1 text-[11px] font-semibold text-stone-800 backdrop-blur-md">1:1 Private</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-serif text-xl font-medium text-brand-charcoal">프라이빗 1:1 세션</h3>
+                            <p class="mt-2 text-xs leading-relaxed text-stone-500">한 사람의 자세와 목표만 보고 기구 순서를 짜는 개인 레슨입니다.</p>
+                            <div class="mt-6 flex items-center justify-between border-t border-stone-100 pt-4 text-xs font-medium text-stone-700">
+                                <span>50분 / 세션</span>
+                                <button type="button" data-open-booking class="flex items-center gap-1 text-brand-sage hover:underline">신청하기 <i data-lucide="chevron-right" class="h-3.5 w-3.5"></i></button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="reveal group overflow-hidden rounded-3xl border border-stone-200 bg-white shadow-sm transition-all duration-500 hover:shadow-2xl">
+                        <div class="relative h-64 overflow-hidden bg-stone-200">
+                            <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&amp;fit=crop&amp;q=80&amp;w=800" alt="함께 스트레칭하는 두 사람" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                            <span class="absolute left-4 top-4 rounded-full bg-white/90 px-3 py-1 text-[11px] font-semibold text-stone-800 backdrop-blur-md">2:1 Duet</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-serif text-xl font-medium text-brand-charcoal">듀엣 2:1 클래스</h3>
+                            <p class="mt-2 text-xs leading-relaxed text-stone-500">연인, 친구, 가족과 나란히 진행하는 소규모 레슨입니다.</p>
+                            <div class="mt-6 flex items-center justify-between border-t border-stone-100 pt-4 text-xs font-medium text-stone-700">
+                                <span>50분 / 세션</span>
+                                <button type="button" data-open-booking class="flex items-center gap-1 text-brand-sage hover:underline">신청하기 <i data-lucide="chevron-right" class="h-3.5 w-3.5"></i></button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="reveal group overflow-hidden rounded-3xl border border-stone-200 bg-white shadow-sm transition-all duration-500 hover:shadow-2xl">
+                        <div class="relative h-64 overflow-hidden bg-stone-200">
+                            <img src="https://images.unsplash.com/photo-1599447421416-3414500d18a5?auto=format&amp;fit=crop&amp;q=80&amp;w=800" alt="그룹 필라테스 수업" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                            <span class="absolute left-4 top-4 rounded-full bg-white/90 px-3 py-1 text-[11px] font-semibold text-stone-800 backdrop-blur-md">4:1 Group</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-serif text-xl font-medium text-brand-charcoal">기구 리포머 그룹</h3>
+                            <p class="mt-2 text-xs leading-relaxed text-stone-500">네 명까지 보는 소수 그룹으로, 템포와 교정을 함께 가져갑니다.</p>
+                            <div class="mt-6 flex items-center justify-between border-t border-stone-100 pt-4 text-xs font-medium text-stone-700">
+                                <span>50분 / 세션</span>
+                                <button type="button" data-open-booking class="flex items-center gap-1 text-brand-sage hover:underline">신청하기 <i data-lucide="chevron-right" class="h-3.5 w-3.5"></i></button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="reveal group overflow-hidden rounded-3xl border border-stone-200 bg-white shadow-sm transition-all duration-500 hover:shadow-2xl">
+                        <div class="relative h-64 overflow-hidden bg-stone-200">
+                            <img src="https://images.unsplash.com/photo-1518310383802-640c2de311b2?auto=format&amp;fit=crop&amp;q=80&amp;w=800" alt="매트 위에서 자세를 잡는 사람" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                            <span class="absolute left-4 top-4 rounded-full bg-white/90 px-3 py-1 text-[11px] font-semibold text-stone-800 backdrop-blur-md">Spine Care</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-serif text-xl font-medium text-brand-charcoal">자세 &amp; 척추 케어</h3>
+                            <p class="mt-2 text-xs leading-relaxed text-stone-500">오래 앉는 사람의 목, 등, 허리 부담을 줄이는 움직임 수업입니다.</p>
+                            <div class="mt-6 flex items-center justify-between border-t border-stone-100 pt-4 text-xs font-medium text-stone-700">
+                                <span>50분 / 세션</span>
+                                <button type="button" data-open-booking class="flex items-center gap-1 text-brand-sage hover:underline">신청하기 <i data-lucide="chevron-right" class="h-3.5 w-3.5"></i></button>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="instructors" class="bg-brand-bg py-24">
+            <div class="mx-auto max-w-7xl px-6">
+                <div class="mb-16 text-center">
+                    <span class="text-xs font-semibold uppercase tracking-widest text-brand-sage">Instructors</span>
+                    <h2 class="mt-2 font-serif text-3xl font-normal text-brand-charcoal md:text-5xl">움직임을 설계하는 강사</h2>
+                </div>
+                <div class="grid grid-cols-1 gap-6 md:grid-cols-3">
+                    <article class="reveal rounded-3xl border border-stone-200 bg-white p-8 text-center shadow-sm">
+                        <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&amp;fit=crop&amp;q=80&amp;w=400" alt="" class="mx-auto h-28 w-28 rounded-full object-cover" loading="lazy">
+                        <h3 class="mt-5 font-serif text-2xl text-brand-charcoal">김아름</h3>
+                        <p class="text-xs uppercase tracking-widest text-brand-sage">Head Instructor</p>
+                        <p class="mt-3 text-sm leading-relaxed text-stone-600">리포머 코어와 첫 방문 체형 상담을 담당합니다.</p>
+                    </article>
+                    <article class="reveal rounded-3xl border border-stone-200 bg-white p-8 text-center shadow-sm">
+                        <img src="https://images.unsplash.com/photo-1599447421416-3414500d18a5?auto=format&amp;fit=crop&amp;q=80&amp;w=400" alt="" class="mx-auto h-28 w-28 rounded-full object-cover" loading="lazy">
+                        <h3 class="mt-5 font-serif text-2xl text-brand-charcoal">이소진</h3>
+                        <p class="text-xs uppercase tracking-widest text-brand-sage">Senior Master</p>
+                        <p class="mt-3 text-sm leading-relaxed text-stone-600">척추 정렬과 자세 교정 세션을 이끕니다.</p>
+                    </article>
+                    <article class="reveal rounded-3xl border border-stone-200 bg-white p-8 text-center shadow-sm">
+                        <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&amp;fit=crop&amp;q=80&amp;w=400" alt="" class="mx-auto h-28 w-28 rounded-full object-cover" loading="lazy">
+                        <h3 class="mt-5 font-serif text-2xl text-brand-charcoal">박나연</h3>
+                        <p class="text-xs uppercase tracking-widest text-brand-sage">Instructor</p>
+                        <p class="mt-3 text-sm leading-relaxed text-stone-600">저녁 릴랙스 플로우와 듀엣 수업을 진행합니다.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="schedule" class="bg-brand-bg py-24 pt-0">
+            <div class="mx-auto max-w-7xl px-6">
+                <div class="relative overflow-hidden rounded-3xl border border-white p-8 shadow-xl glass-panel md:p-12">
+                    <div class="grid grid-cols-1 items-center gap-8 lg:grid-cols-12">
+                        <div class="space-y-4 lg:col-span-7">
+                            <span class="text-xs font-semibold uppercase tracking-widest text-brand-sage">First Visit</span>
+                            <h2 class="font-serif text-3xl font-normal text-brand-charcoal md:text-4xl">
+                                첫 방문 체험을 위한<br>
+                                <span class="font-light italic text-brand-sageDark">인트로 세션</span>
+                            </h2>
+                            <p class="max-w-lg text-sm leading-relaxed text-stone-600">
+                                처음 오시는 분은 자세를 함께 보고, 어떤 수업이 맞는지 50분 동안 안내받습니다.
+                            </p>
+                            <div class="flex flex-wrap gap-4 pt-4">
+                                <div class="flex items-center gap-3 rounded-2xl border border-stone-200 bg-white/80 px-4 py-2.5">
+                                    <i data-lucide="check-circle-2" class="h-5 w-5 text-brand-sage"></i>
+                                    <span class="text-xs font-medium text-stone-700">1:1 체험 세션</span>
+                                </div>
+                                <div class="flex items-center gap-3 rounded-2xl border border-stone-200 bg-white/80 px-4 py-2.5">
+                                    <i data-lucide="check-circle-2" class="h-5 w-5 text-brand-sage"></i>
+                                    <span class="text-xs font-medium text-stone-700">자세 메모 안내</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="space-y-4 rounded-2xl border border-stone-200 bg-white p-6 shadow-sm lg:col-span-5">
+                            <div class="flex items-center justify-between border-b border-stone-100 pb-3">
+                                <span class="text-sm font-medium text-brand-charcoal">이번 주 추천 시간</span>
+                                <span class="text-xs font-semibold text-brand-sage">예시 시간표</span>
+                            </div>
+                            <div class="space-y-2 text-xs">
+                                <div class="flex items-center justify-between rounded-xl bg-stone-50 p-3">
+                                    <div>
+                                        <p class="font-semibold text-stone-800">오전 10:00 · 리포머 코어 플로우</p>
+                                        <p class="text-stone-400">김아름</p>
+                                    </div>
+                                    <span class="rounded-full bg-brand-sage/10 px-2.5 py-1 font-medium text-brand-sage">마감임박</span>
+                                </div>
+                                <div class="flex items-center justify-between rounded-xl bg-stone-50 p-3">
+                                    <div>
+                                        <p class="font-semibold text-stone-800">오후 02:00 · 척추 자세 교정</p>
+                                        <p class="text-stone-400">이소진</p>
+                                    </div>
+                                    <span class="rounded-full bg-emerald-50 px-2.5 py-1 font-medium text-emerald-600">예약가능</span>
+                                </div>
+                                <div class="flex items-center justify-between rounded-xl bg-stone-50 p-3">
+                                    <div>
+                                        <p class="font-semibold text-stone-800">오후 07:30 · 이브닝 릴랙스</p>
+                                        <p class="text-stone-400">박나연</p>
+                                    </div>
+                                    <span class="rounded-full bg-emerald-50 px-2.5 py-1 font-medium text-emerald-600">예약가능</span>
+                                </div>
+                            </div>
+                            <button type="button" data-open-booking class="w-full rounded-xl bg-brand-charcoal py-3 text-xs font-medium text-white transition-colors hover:bg-brand-sage">
+                                스케줄 선택 및 체험 예약하기
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="border-t border-stone-800 bg-brand-charcoal py-16 text-white">
+        <div class="mx-auto grid max-w-7xl grid-cols-1 gap-10 px-6 md:grid-cols-4">
+            <div class="space-y-4">
+                <div class="flex items-center gap-3">
+                    <div class="flex h-8 w-8 items-center justify-center rounded-full border border-white/30">
+                        <span class="font-serif text-lg font-bold italic text-white">A</span>
+                    </div>
+                    <span class="font-serif text-xl tracking-widest">AURA PILATES</span>
+                </div>
+                <p class="text-xs leading-relaxed text-stone-400">호흡과 체형 균형을 위한 맞춤 필라테스 스튜디오.</p>
+            </div>
+            <div>
+                <h2 class="mb-4 text-xs font-semibold uppercase tracking-widest text-stone-300">Location</h2>
+                <p class="text-xs leading-relaxed text-stone-400">서울특별시 강남구 테헤란로 123 아우라 타워 4층<br>(역삼역 3번 출구 도보 2분)</p>
+            </div>
+            <div>
+                <h2 class="mb-4 text-xs font-semibold uppercase tracking-widest text-stone-300">Contact</h2>
+                <p class="text-xs leading-relaxed text-stone-400">Tel: 02-555-8910<br>Kakao: @aurapilates<br>월–토 07:00 – 22:00</p>
+            </div>
+            <div>
+                <h2 class="mb-4 text-xs font-semibold uppercase tracking-widest text-stone-300">Newsletter</h2>
+                <form id="newsletter-form" class="flex gap-2">
+                    <label for="newsletter-email" class="sr-only">이메일 주소</label>
+                    <input id="newsletter-email" type="email" required placeholder="이메일 주소 입력" class="w-full rounded-xl border border-stone-700 bg-stone-800 px-3 py-2 text-xs text-white placeholder-stone-500 focus:border-brand-sage focus:outline-none">
+                    <button type="submit" class="rounded-xl bg-brand-sage px-4 py-2 text-xs font-medium transition-colors hover:bg-emerald-700">구독</button>
+                </form>
+            </div>
+        </div>
+        <div class="mx-auto mt-12 max-w-7xl border-t border-stone-800/80 px-6 pt-6 text-center text-[11px] text-stone-500">
+            © 2026 AURA PILATES Studio. All rights reserved.
+        </div>
+    </footer>
+
+    <div id="booking-modal" class="pointer-events-none fixed inset-0 z-50 flex items-center justify-center bg-black/50 opacity-0 backdrop-blur-sm transition-opacity duration-300" role="dialog" aria-modal="true" aria-labelledby="booking-title" hidden>
+        <div id="modal-card" class="mx-4 w-full max-w-lg scale-95 rounded-3xl border border-white bg-white/95 p-8 shadow-2xl transition-transform duration-300">
+            <div class="flex items-center justify-between border-b border-stone-200 pb-4">
+                <div>
+                    <h2 id="booking-title" class="font-serif text-2xl font-semibold text-brand-charcoal">체험 클래스 예약</h2>
+                    <p class="mt-1 text-xs text-stone-500">강사와 함께 자세를 보고 수업 방향을 정합니다.</p>
+                </div>
+                <button type="button" id="close-booking" class="p-2 text-stone-400 hover:text-stone-700" aria-label="예약창 닫기">
+                    <i data-lucide="x" class="h-5 w-5"></i>
+                </button>
+            </div>
+
+            <form id="booking-form" class="mt-6 space-y-4">
+                <div>
+                    <label for="guest-name" class="mb-1 block text-xs font-medium text-stone-700">성함</label>
+                    <input id="guest-name" name="name" type="text" required placeholder="홍길동" class="w-full rounded-xl border border-stone-200 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-sage">
+                </div>
+                <div>
+                    <label for="guest-phone" class="mb-1 block text-xs font-medium text-stone-700">연락처</label>
+                    <input id="guest-phone" name="phone" type="tel" required placeholder="010-0000-0000" class="w-full rounded-xl border border-stone-200 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-sage">
+                </div>
+                <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                    <div>
+                        <label for="guest-date" class="mb-1 block text-xs font-medium text-stone-700">희망 날짜</label>
+                        <input id="guest-date" name="date" type="date" required class="w-full rounded-xl border border-stone-200 px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-sage">
+                    </div>
+                    <div>
+                        <label for="guest-program" class="mb-1 block text-xs font-medium text-stone-700">관심 프로그램</label>
+                        <select id="guest-program" name="program" class="w-full rounded-xl border border-stone-200 px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-sage">
+                            <option>1:1 프라이빗 세션</option>
+                            <option>2:1 듀엣 세션</option>
+                            <option>4:1 리포머 그룹</option>
+                            <option>자세 &amp; 척추 케어</option>
+                        </select>
+                    </div>
+                </div>
+                <div>
+                    <label for="guest-note" class="mb-1 block text-xs font-medium text-stone-700">운동 목적 / 전달사항</label>
+                    <textarea id="guest-note" name="note" rows="3" placeholder="체형 교정, 허리 부담 완화처럼 목적을 적어 주세요." class="w-full rounded-xl border border-stone-200 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-sage"></textarea>
+                </div>
+                <button type="submit" class="mt-2 w-full rounded-xl bg-brand-charcoal py-3.5 text-sm font-medium text-white shadow-lg transition-colors hover:bg-brand-sage">
+                    예약 신청 완료하기
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
+

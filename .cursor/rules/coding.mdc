@@ -1,0 +1,19 @@
+---
+description: pil_web 코딩 기본 규칙
+alwaysApply: true
+---
+
+# 코딩 기본 규칙
+
+- 식별자는 영어로 짓는다. 파일명과 CSS 클래스는 `class-schedule`처럼 소문자와 하이픈을 쓴다. JavaScript 변수와 함수는 `classSchedule`처럼 카멜 표기를 쓴다.
+- HTML, CSS, JavaScript는 파일을 나눈다. 페이지는 프로젝트 루트에 두고, 스타일은 `css/`, 스크립트는 `js/`, 이미지는 `images/`에 둔다.
+- 파일 연결은 `css/style.css`처럼 상대 경로를 쓴다.
+- 이미 있는 화면의 배치와 디자인은 유지하고, 요청한 부분만 수정한다.
+
+```html
+<link rel="stylesheet" href="css/style.css">
+```
+
+```javascript
+const classSchedule = document.querySelector(".class-schedule");
+```
