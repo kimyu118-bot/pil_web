@@ -17,6 +17,14 @@
     <script src="https://unpkg.com/lucide@0.469.0/dist/umd/lucide.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+                "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
+            }
+        }
+    </script>
 
 </head>
 <body class="selection:bg-brand-sage selection:text-white">
@@ -64,7 +72,9 @@
     </header>
 
     <main>
-        <section id="home" class="relative flex min-h-screen w-full items-center pt-24">
+        <section id="home" class="relative flex min-h-screen w-full items-center overflow-hidden pt-24">
+            <div id="wave-background" class="absolute inset-0 z-0" aria-hidden="true"></div>
+            <div class="hero-wave-fade pointer-events-none absolute inset-0 z-10"></div>
             <div class="relative z-20 mx-auto grid w-full max-w-7xl grid-cols-1 items-center px-6 py-10 lg:grid-cols-12 lg:py-16">
                 <div class="hero-copy pointer-events-auto min-w-0 space-y-6 lg:col-span-8">
                     <div class="flex w-fit max-w-full items-center gap-2 rounded-full border border-brand-sage/30 px-3.5 py-1.5 text-xs font-medium uppercase tracking-wide text-stone-700 glass-panel sm:tracking-widest">
@@ -405,6 +415,7 @@
         </div>
     </div>
 
+    <script type="module" src="js/wave-background.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>
